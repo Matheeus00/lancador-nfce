@@ -1,4 +1,4 @@
-package com.fritz.lancador.model;
+package com.fritz.lancador.models;
 
 import com.fritz.lancador.enums.Item;
 import javafx.beans.property.DoubleProperty;

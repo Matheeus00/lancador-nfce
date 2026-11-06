@@ -8,12 +8,19 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 
+import java.util.function.Consumer;
+
 public class SearchField extends SimpleTextControl {
 
     private HBox container;
     private TextField textField;
     private Label fieldLabel;
     private Button button;
+    private Consumer<String> searchHandler;
+
+    public void setOnSearch(Consumer<String> searchHandler) {
+        this.searchHandler = searchHandler;
+    }
 
     @Override
     public void initializeParts() {
@@ -23,7 +30,9 @@ public class SearchField extends SimpleTextControl {
         textField = new TextField();
         button = new Button("Buscar");
         button.setOnAction(e -> {
-            System.out.println("Botão clicado! Valor atual: " + field.getValue());
+            if (searchHandler != null) {
+                searchHandler.accept(textField.getText());
+            }
         });
         fieldLabel = new Label();
 

@@ -4,6 +4,14 @@ target/
 !**/src/test/**/target/
 .kotlin
 
+### Local application data and digital certificates ###
+/.lancador/
+*.db
+*.db-shm
+*.db-wal
+*.p12
+*.pfx
+
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml

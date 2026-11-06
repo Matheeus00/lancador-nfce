@@ -1,91 +1,113 @@
-/* --- CONFIGURAÇÕES GLOBAIS E FONTES --- */
 .root {
-    -fx-font-family: "Segoe UI", -fx-font-family;
+    -fx-font-family: "Segoe UI";
     -fx-font-size: 14px;
-    -fx-background-color: #f3f3f3; /* Cor de fundo padrão do Windows 11 */
-}
-
-/* --- ESTILIZAÇÃO DO FORMSFX --- */
-/* --- O PAINEL PRINCIPAL DO FORMSFX (FORM RENDERER) --- */
-.form {
-    -fx-background-color: #ffffff;
-    -fx-background-radius: 8px;
-    -fx-border-radius: 8px;
-    -fx-border-color: #e5e5e5;
-    -fx-border-width: 1px;
-    -fx-padding: 24px;
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.06), 8, 0, 0, 2);
+    -fx-background-color: #f4f7fb;
 }
 
 .panel-container {
-    -fx-background-color: #f3f3f3; /* Cinza claro nativo do fundo do Windows 11 */
-    -fx-padding: 20px;
+    -fx-background-color: #f4f7fb;
+    -fx-padding: 30px 42px 28px 42px;
+    -fx-spacing: 18px;
+}
+
+.fullscreen-mode .panel-container {
+    -fx-padding: 48px 64px 40px 64px;
+    -fx-spacing: 28px;
+}
+
+.fullscreen-mode .form {
+    -fx-padding: 36px;
+}
+
+.fullscreen-mode .page-title {
+    -fx-font-size: 30px;
+}
+
+.fullscreen-mode .page-subtitle {
+    -fx-font-size: 15px;
+}
+
+.fullscreen-mode .actions-bar {
+    -fx-spacing: 16px;
+}
+
+.page-header {
+    -fx-padding: 0 2px 2px 2px;
+}
+
+.page-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #172b4d;
+}
+
+.page-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #65758b;
+}
+
+.certificate-status {
+    -fx-padding: 0 2px;
+    -fx-font-size: 12px;
+    -fx-text-fill: #65758b;
+}
+
+.page-header .button {
+    -fx-min-width: 112px;
+}
+
+.form {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 14px;
+    -fx-border-color: #e4eaf2;
+    -fx-border-radius: 14px;
+    -fx-border-width: 1px;
+    -fx-padding: 26px;
+    -fx-effect: dropshadow(three-pass-box, rgba(30, 55, 90, 0.08), 16, 0, 0, 5);
 }
 
 .form-section-title {
-    -fx-font-size: 18px;
-    -fx-font-weight: 600;
-    -fx-text-fill: #1f1f1f;
+    -fx-font-size: 16px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #1769aa;
     -fx-padding: 0 0 12px 0;
 }
 
 .form-label {
     -fx-font-size: 13px;
-    -fx-text-fill: #5f5f5f;
-    -fx-font-weight: 500;
+    -fx-font-weight: 600;
+    -fx-text-fill: #46566c;
 }
 
 .form-error-label {
-    -fx-text-fill: #c42b1c; /* Vermelho padrão de erro do Windows */
     -fx-font-size: 12px;
+    -fx-text-fill: #c62828;
 }
 
 .form .text-field,
+.form .combo-box,
 .form-row .text-field {
     -fx-background-color: #ffffff;
-    -fx-background-radius: 4px;
-    -fx-border-color: #878787;
-    -fx-border-radius: 4px;
+    -fx-background-radius: 7px;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 7px;
     -fx-border-width: 1px;
-    -fx-padding: 6px 12px;
-    -fx-text-fill: #1f1f1f;
-    /* Remove sombras indesejadas que o FormsFX pode ter herdado no painel */
+    -fx-padding: 9px 12px;
+    -fx-text-fill: #172b4d;
+    -fx-prompt-text-fill: #94a3b8;
     -fx-effect: null;
 }
 
-/* Garante que o efeito de Hover mude apenas a caixa de texto */
-.form .text-field:hover {
-    -fx-border-color: #616161;
-    -fx-background-color: #fafafa;
+.form .text-field:hover,
+.form .combo-box:hover {
+    -fx-border-color: #94a3b8;
 }
 
-/* Garante que o foco azul do Windows 11 mude apenas a caixa de texto */
-.form .text-field:focused {
-    -fx-background-color: #ffffff;
-    -fx-border-color: #0067b8;
+.form .text-field:focused,
+.form .combo-box:focused {
+    -fx-border-color: #1976c9;
     -fx-border-width: 2px;
-    -fx-padding: 5px 11px; /* Ajuste compensatório da borda */
-}
-
-.form-section-title {
-    -fx-font-family: "Segoe UI", -fx-font-family;
-    -fx-font-size: 16px;          /* Tamanho ideal para subtítulos no Windows 11 */
-    -fx-font-weight: 700;         /* Peso Semibold para dar destaque */
-    -fx-text-fill: #0067b8;       /* Cor de texto padrão do Fluent Design */
-    -fx-padding: 0 0 16px 0;      /* Espaço generoso abaixo do título antes do primeiro campo */
-    -fx-border-color: transparent; /* Garante que nenhuma linha residual apareça abaixo dele */
-}
-
-/* --- REFORÇANDO O ESTILO DO PAINEL PRINCIPAL --- */
-/* Certifique-se de que a regra do painel está isolada para não herdar as bordas do text-field */
-.form {
-    -fx-background-color: #ffffff !important;
-    -fx-background-radius: 8px !important;
-    -fx-border-radius: 8px !important;
-    -fx-padding: 24px;
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.06), 8, 0, 0, 2);
-    -fx-border-color: transparent !important;
-    -fx-border-width: 0px !important;
+    -fx-padding: 8px 11px;
 }
 
 .form .spinner .increment-arrow-button,
@@ -103,101 +125,38 @@
 }
 
 .form .spinner .text-field {
-    -fx-background-radius: 4px;
-    -fx-border-radius: 4px;
+    -fx-background-radius: 7px;
+    -fx-border-radius: 7px;
 }
 
 .formsfx-group {
-    -fx-border-color: transparent !important;
-    -fx-border-width: 0px !important;
-    -fx-box-border: transparent !important; /* Remove a borda padrão interna do JavaFX */
-    -fx-inner-border: transparent !important;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-box-border: transparent;
+    -fx-inner-border: transparent;
 }
-
-/* --- CAMPOS DE TEXTO E COMBOBOX (INPUTS) --- */
-.text-field, .combo-box {
-    -fx-background-color: #ffffff;
-    -fx-background-radius: 4px;
-    -fx-border-color: #878787;
-    -fx-border-radius: 4px;
-    -fx-border-width: 1px;
-    -fx-padding: 6px 12px;
-    -fx-text-fill: #1f1f1f;
-}
-
-/* Efeito de Foco (clique) - Azul característico do Windows */
-.text-field:focused, .combo-box:focused {
-    -fx-background-color: #ffffff;
-    -fx-border-color: #0067b8;
-}
-
-/* --- BOTÕES --- */
-.button {
-    -fx-background-color: #ffffff;
-    -fx-background-radius: 4px;
-    -fx-border-color: #cccccc;
-    -fx-border-radius: 4px;
-    -fx-padding: 6px 20px;
-    -fx-text-fill: #1f1f1f;
-    -fx-font-weight: 500;
-}
-
-.button:hover {
-    -fx-background-color: #f9f9f9;
-    -fx-border-color: #999999;
-}
-
-/* Botão de Destaque (como o botão "Salvar") */
-.button-primary {
-    -fx-background-color: #0067b8;
-    -fx-text-fill: #ffffff;
-    -fx-border-width: 0px;
-}
-
-.button-primary:hover {
-    -fx-background-color: #005da6;
-}
-
-/* --- CAIXAS DE DIÁLOGO (ALERTS) --- */
-.dialog-pane {
-    -fx-background-color: #f3f3f3;
-}
-.dialog-pane .label {
-    -fx-text-fill: #1f1f1f;
-}
-.dialog-pane:header .header-panel {
-    -fx-background-color: #f3f3f3;
-}
-
-/* --- RADIO BUTTONS (ESTILO WINDOWS 11) --- */
 
 .radio-button {
-    -fx-text-fill: #1f1f1f;
+    -fx-text-fill: #334155;
     -fx-spacing: 8px;
-    -fx-padding: 4px 0;
+    -fx-padding: 5px 0;
 }
 
 .radio-button > .radio {
     -fx-background-color: #ffffff;
-    -fx-border-color: #878787;
+    -fx-border-color: #94a3b8;
     -fx-border-radius: 100px;
     -fx-border-width: 1px;
     -fx-padding: 7px;
 }
 
 .radio-button:hover > .radio {
-    -fx-border-color: #616161;
-    -fx-background-color: #fafafa;
+    -fx-border-color: #1976c9;
 }
 
 .radio-button:selected > .radio {
-    -fx-background-color: #0067b8;
-    -fx-border-color: #0067b8;
-}
-
-.radio-button:selected:hover > .radio {
-    -fx-background-color: #005da6;
-    -fx-border-color: #005da6;
+    -fx-background-color: #1976c9;
+    -fx-border-color: #1976c9;
 }
 
 .radio-button > .radio > .dot {
@@ -212,5 +171,77 @@
 
 .radio-button:focused > .radio {
     -fx-border-width: 2px;
-    -fx-border-color: #0067b8;
+    -fx-border-color: #1976c9;
+}
+
+.actions-bar {
+    -fx-padding: 0 2px;
+}
+
+.button {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8px;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 8px;
+    -fx-border-width: 1px;
+    -fx-padding: 10px 18px;
+    -fx-text-fill: #334155;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #f8fafc;
+    -fx-border-color: #94a3b8;
+}
+
+.button:pressed {
+    -fx-background-color: #eef2f7;
+}
+
+.button:focused {
+    -fx-border-color: #1976c9;
+}
+
+.actions-bar .button {
+    -fx-min-width: 132px;
+}
+
+.button-primary {
+    -fx-background-color: #1769aa;
+    -fx-border-color: #1769aa;
+    -fx-text-fill: #ffffff;
+}
+
+.button-primary:hover {
+    -fx-background-color: #12588f;
+    -fx-border-color: #12588f;
+}
+
+.button-primary:pressed {
+    -fx-background-color: #0e4774;
+}
+
+.button-secondary {
+    -fx-background-color: #e9f2fb;
+    -fx-border-color: #d3e4f5;
+    -fx-text-fill: #145b92;
+}
+
+.button-secondary:hover {
+    -fx-background-color: #dcecf9;
+    -fx-border-color: #b7d4ee;
+}
+
+.dialog-pane {
+    -fx-background-color: #ffffff;
+}
+
+.dialog-pane .label {
+    -fx-text-fill: #334155;
+}
+
+.dialog-pane:header .header-panel {
+    -fx-background-color: #f4f7fb;
 }
